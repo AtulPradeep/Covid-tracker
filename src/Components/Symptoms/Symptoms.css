@@ -1,0 +1,22 @@
+.text-covid {
+  margin: 2% 3%;
+  text-align: justify;
+}
+.header-symptoms {
+  display: flex;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 2rem;
+  text-align: justify;
+}
+.symptoms-list {
+  margin: 2rem 2rem;
+}
+.list-symptoms-item {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.symptoms-conclusion {
+  margin: 2rem 2rem;
+  text-align: justify;
+}
