@@ -7,7 +7,7 @@ import { DataContext } from "../../App";
 
 const Graph = () => {
   //Accessing context value
-  const { tableData } = useContext(DataContext);
+  const { tableData, dateFrom, dateTo } = useContext(DataContext);
   //creating state variables
   const [chartSelector, setChartSelector] = useState("bar");
 
@@ -64,6 +64,11 @@ const Graph = () => {
 
   return (
     <div className="graph-container">
+      <p className="card-dates">
+        {" "}
+        Showing results from &nbsp; <strong>{dateFrom}&nbsp;</strong>
+        {""} to&nbsp; <strong>{dateTo}</strong>
+      </p>
       {/* containers for buttons */}
       <div className="button-container">
         <button

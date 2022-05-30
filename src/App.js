@@ -25,7 +25,7 @@ function App() {
   //initializing state values
   const [city, setCity] = useState([]);
   const [cityId, setCityId] = useState(13);
-  const [dateFrom, setDateFrom] = useState("2022-05-01");
+  const [dateFrom, setDateFrom] = useState("2022-04-01");
   const [dateTo, setDateTo] = useState("2022-05-25");
   const [tableData, setTableData] = useState([]);
   const routerArr = ["Home", "Symptoms", "Prevention", "About", "Covid-19"];
