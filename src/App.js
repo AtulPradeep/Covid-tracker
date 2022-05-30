@@ -7,9 +7,10 @@ import {
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
+import "./App.css";
 
 //Importing components
-import Whatiscovid from "./Components/Covid-19/Whatiscovid";
+import Covid from "./Components/Covid-19/Covid";
 import Symptoms from "./Components/Symptoms/Symptoms";
 import About from "./Components/About/About";
 import Prevention from "./Components/Prevention/Prevention";
@@ -27,7 +28,14 @@ function App() {
   const [dateFrom, setDateFrom] = useState("2022-05-01");
   const [dateTo, setDateTo] = useState("2022-05-25");
   const [tableData, setTableData] = useState([]);
-
+  const routerArr = ["Home", "Symptoms", "Prevention", "About", "Covid-19"];
+  const routerComp = [
+    <Home />,
+    <Symptoms />,
+    <Prevention />,
+    <About />,
+    <Covid />,
+  ];
   return (
     <Router>
       <DataContext.Provider
@@ -47,39 +55,17 @@ function App() {
         <div className="App">
           <Header />
           <Fetch />
-          {/* //Switching for routes */}
           <Switch>
-            <Route exact path="/Home">
-              <Home />
-              <Footer />
-            </Route>
-
-            <Route exact path="/">
-              <Home />
-              <Footer />
-            </Route>
-
-            <Route exact path="/About">
-              <About />
-              <Footer />
-            </Route>
-
-            <Route exact path="/Prevention">
-              <Prevention />
-              <Footer />
-            </Route>
-
-            <Route exact path="/Symptoms">
-              <Symptoms />
-              <Footer />
-            </Route>
-
-            <Route exact path="/Covid-19">
-              <Whatiscovid />
-              <Footer />
-            </Route>
+            {routerArr.map((item, index) => {
+              return (
+                <Route key={index} exact path={`/${item}`}>
+                  {routerComp[index]}
+                </Route>
+              );
+            })}
             <Redirect to="/Home" />
           </Switch>
+          <Footer />
         </div>
       </DataContext.Provider>
     </Router>

@@ -12,18 +12,18 @@ function Symptoms() {
     "Headache",
   ];
   return (
-    <div>
+    <div className="main-container-symptoms">
       <h3 className="header-symptoms">Watch for Symptoms</h3>
-      <p className="text-covid">{symptoms}</p>
-      {symptoms_list.map((item, index) => {
-        return (
-          <ul className="list-group symptoms-list">
+      <p className="text-covd">{symptoms}</p>
+      <ul className="list-group symptoms-list">
+        {symptoms_list.map((item, index) => {
+          return (
             <li key={index} className="list-symptoms-item">
               {item}
             </li>
-          </ul>
-        );
-      })}
+          );
+        })}
+      </ul>
       <p className="symptoms-conclusion">{symptoms_continue}</p>
     </div>
   );

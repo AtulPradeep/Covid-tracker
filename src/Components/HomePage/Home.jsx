@@ -28,52 +28,48 @@ function Home() {
   }, [city]);
 
   return (
-    <div className="hometracker">
+    <div className="parent-container">
       <div className="card-container">
-        <div className="card" styles="width: 18rem;">
-          <div className="card-body">
-            <h6 className="card-title">City : {cityname}</h6>
+        {/* card for choosing city and displaying live */}
 
-            <div className="cardw">
-              <div className="dropdown">
-                <button
-                  className="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton1"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Choose City
-                </button>
-                <ul
-                  className="dropdown-menu"
-                  aria-labelledby="dropdownMenuButton1"
-                >
-                  {city.map((item, index) => {
-                    return (
-                      <li key={index}>
-                        <button
-                          className="dropdown-item"
-                          value={item.cityName}
-                          onClick={() => handlechange(index)}
-                        >
-                          {item.cityName}
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </div>
-            <div className="spinners">
-              <div
-                className="spinner-grow spinner-grow-sm live"
-                role="status"
-              ></div>
-              <p>Live</p>
-            </div>
+        <div className="card city-select" styles="width: 18rem;">
+          <div className="spinners-text">
+            <div className="spinner-grow spinner-grow" role="status"></div>
+            <p>Live</p>
+          </div>
+
+          {/* //Dropdown for selecting cities */}
+
+          <div className="dropdown">
+            <button
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Choose City
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              {city.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <button
+                      className="dropdown-item"
+                      value={item.cityName}
+                      onClick={() => handlechange(index)}
+                    >
+                      {item.cityName}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
+
+        {/* card for displaying totalcases */}
+
         <div className="card" id="totalcard" styles="width: 18rem;">
           <div className="card-body">
             <h3 className="card-title">{totalCases}</h3>
@@ -82,6 +78,8 @@ function Home() {
             </h4>
           </div>
         </div>
+
+        {/* card for displaying activecases */}
 
         <div className="card" id="deathcard" styles="width: 18rem;">
           <div className="card-body">
@@ -92,6 +90,8 @@ function Home() {
           </div>
         </div>
 
+        {/* card for displaying inactivecases */}
+
         <div className="card" id="recoveredcard" styles="width: 18rem;">
           <div className="card-body">
             <h3 className="card-title">{totalCases - activeCases}</h3>
@@ -100,10 +100,15 @@ function Home() {
             </h4>
           </div>
         </div>
+      </div>{" "}
+      {/* end of card container */}
+      {/* displaying selected city name */}
+      <div className="city-title">
+        <h6 className="card-title">City : {cityname}</h6>
       </div>
+      {/* displaying graph and table components */}
       <div className="info-container">
         <Graph />
-
         <Table cityName={cityname} />
       </div>
     </div>

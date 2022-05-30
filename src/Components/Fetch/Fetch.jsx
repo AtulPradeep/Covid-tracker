@@ -5,7 +5,7 @@ import { useEffect, useContext } from "react";
 import { DataContext } from "../../App";
 
 function Fetch() {
-  //Data coontexts
+  //Data contexts
   const { cityId, setCity, dateFrom, dateTo, setTableData } =
     useContext(DataContext);
   // Fetching the API with dateto and from

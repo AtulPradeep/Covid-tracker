@@ -12,13 +12,13 @@ function Header() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           {/* // Creating logo */}
-          <img
+          {/* <img
             src={ionos}
             className="me-2"
             height="40"
             alt="IONOS LOGO"
             loading="lazy"
-          />
+          /> */}
           <Link className="navbar-brand" to="/Home">
             Covid Tracker
           </Link>

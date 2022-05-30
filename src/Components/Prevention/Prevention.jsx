@@ -1,31 +1,34 @@
 import React from "react";
 import { prevention } from "../../Assets/Covids";
+import "./Prevention.css";
 
 function Prevention() {
   return (
-    <div>
-      <div>
-        <h3 className="header-covid">How to prevent Covid-19?</h3>
-        <div className="whatiscovid">
-          <p ClassName="text-covid">{prevention}</p>
+    <div className="main-container-prevention">
+      <h3 className="header-covid">How to prevent Covid-19?</h3>
+      <div className="covid-text-video-container">
+        <p ClassName="text-covid">{prevention}</p>
 
-          <div className="embed-responsive embed-responsive-21by9 frame">
-            <iframe
-              className="embed-responsive-item"
-              src=" https://www.youtube.com/embed/oqFn6AHoJZQ?rel=0"
-              allowfullscreen
-              width={440}
-              height={300}
-            ></iframe>
-          </div>
+        {/* video container */}
+
+        <div className="embed-responsive embed-responsive-21by9 frame">
+          <iframe
+            className="embed-responsive-item"
+            src=" https://www.youtube.com/embed/oqFn6AHoJZQ?rel=0"
+            allowfullscreen
+            width={"auto"}
+            height={"auto"}
+          ></iframe>
         </div>
-        <a
-          className=" navigation-link"
-          href="https://www.who.int/health-topics/coronavirus#tab=tab_1"
-        >
-          Visit WHO website for more informations{" "}
-        </a>
       </div>
+
+      {/* Navigation link to website */}
+      <a
+        className=" navigation-link"
+        href="https://www.who.int/health-topics/coronavirus#tab=tab_1"
+      >
+        Visit WHO website for more informations{" "}
+      </a>
     </div>
   );
 }

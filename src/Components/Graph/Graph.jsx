@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 import "./Graph.css";
 
@@ -29,7 +29,7 @@ const Graph = () => {
   const optionsBar = {
     chart: {
       stacked: true,
-      toolbar: false,
+      // toolbar: false,
     },
     xaxis: {
       categories: dates,
@@ -41,7 +41,7 @@ const Graph = () => {
   const optionsLineAndArea = {
     chart: {
       type: "Line",
-      toolbar: false,
+      // toolbar: false,
     },
     xaxis: {
       categories: dates,
@@ -64,6 +64,7 @@ const Graph = () => {
 
   return (
     <div className="graph-container">
+      {/* containers for buttons */}
       <div className="button-container">
         <button
           className="btn graph-btn bar"

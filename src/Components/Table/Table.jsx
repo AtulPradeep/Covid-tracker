@@ -69,7 +69,7 @@ const Table = ({ cityName }) => {
         data={tableData}
         columns={columns}
         style={{ textAlign: "center" }}
-        pageSize={5}
+        pageSize={8}
       />
       {tableData !== undefined ? (
         <CSVLink

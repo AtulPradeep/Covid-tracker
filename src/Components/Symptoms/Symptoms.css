@@ -1,7 +1,8 @@
-.text-covid {
-  margin: 2% 3%;
-  text-align: justify;
+.main-container-symptoms {
+  height: 75vh;
+  font-size: var(--font-size);
 }
+
 .header-symptoms {
   display: flex;
   margin-left: 3%;
@@ -9,12 +10,15 @@
   margin-top: 2rem;
   text-align: justify;
 }
+.text-covd {
+  margin: 2% 3%;
+}
+
 .symptoms-list {
   margin: 2rem 2rem;
 }
 .list-symptoms-item {
-  margin-left: 2%;
-  margin-right: 2%;
+  margin: 0.2rem 2%;
 }
 .symptoms-conclusion {
   margin: 2rem 2rem;
