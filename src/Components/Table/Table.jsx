@@ -6,6 +6,14 @@ import { CSVLink } from "react-csv";
 import { DataContext } from "../../ContextAPI/DataContext";
 
 const Table = () => {
+  //Getting current date
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, "0");
+  var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  var yyyy = today.getFullYear();
+
+  today = yyyy + "-" + mm + "-" + dd;
+
   //Context values
   const { tableData, setDateFrom, setDateTo, cityName } =
     useContext(DataContext);
@@ -27,7 +35,8 @@ const Table = () => {
   const handlechangedate = () => {
     if (
       (selectedDateTo && selectedDate) !== null &&
-      selectedDateTo > selectedDate
+      selectedDateTo > selectedDate &&
+      (selectedDateTo && selectedDate) <= today
     ) {
       setDateFrom(selectedDate);
       setDateTo(selectedDateTo);
@@ -72,6 +81,7 @@ const Table = () => {
         style={{ textAlign: "center" }}
         pageSize={8}
       />
+
       {tableData !== undefined ? (
         <CSVLink
           className="btn btn-primary generate"
