@@ -3,11 +3,12 @@ import "./Table.css";
 import ReactTable from "react-table-6";
 import { CSVLink } from "react-csv";
 
-import { DataContext } from "../../App";
+import { DataContext } from "../../ContextAPI/DataContext";
 
-const Table = ({ cityName }) => {
+const Table = () => {
   //Context values
-  const { tableData, setDateFrom, setDateTo } = useContext(DataContext);
+  const { tableData, setDateFrom, setDateTo, cityName } =
+    useContext(DataContext);
 
   // initializing the state variables
 

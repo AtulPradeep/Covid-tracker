@@ -1,8 +1,12 @@
 <!-- Covid tracker - IONOS
 
 Covid tracker displays all the necessary informations such as active covid cases, inactive cases, total cases in and around the city of Karlsruhe. The application also displays the results in form of a chart/graph.
+
 Currently we support 3 types of charts bar, line and area. Users could also view the data in tabular form.
 Date picking option helps users to choose date ranges to generate data in custom ranges.
+
+There is also option to sort according to date, and cases showing the highest ans lowest cases and the corrensponding dates.
+
 Users could also download the Chart as well as the tables in CSV format and the chart in PNG or SVG format. Additonal informations about Covid-19 are also given such as prevention, symptoms etc.
 
 Prerequisites to run the code.

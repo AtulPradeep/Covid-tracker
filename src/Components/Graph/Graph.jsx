@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import Chart from "react-apexcharts";
 import "./Graph.css";
 
 //importing context
-import { DataContext } from "../../App";
+import { DataContext } from "../../ContextAPI/DataContext";
 
 const Graph = () => {
   //Accessing context value
@@ -23,6 +23,7 @@ const Graph = () => {
     activCasesData.push(item.activeCases);
     totalCasesData.push(item.totalCases);
     recoveredData.push(item.recovered);
+    return null;
   });
 
   //Plotting data
