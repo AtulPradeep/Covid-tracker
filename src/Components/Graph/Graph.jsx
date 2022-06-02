@@ -1,23 +1,20 @@
 import React, { useContext, useState } from "react";
+import { options } from "./options";
 import Chart from "react-apexcharts";
 import "./Graph.css";
-
 //importing context
 import { DataContext } from "../../ContextAPI/DataContext";
-import { id } from "date-fns/locale";
 
 const Graph = () => {
   //Accessing context value
   const { tableData, dateFrom, dateTo } = useContext(DataContext);
   //creating state variables
   const [chartSelector, setChartSelector] = useState("bar");
-
   //Creating array values for pushing
   let dates = [];
   let activCasesData = [];
   let totalCasesData = [];
   let recoveredData = [];
-
   //Pushing data
   tableData.map((item) => {
     dates.push(item.date);
@@ -25,29 +22,9 @@ const Graph = () => {
     totalCasesData.push(item.totalCases);
     recoveredData.push(item.recovered);
   });
-
-  //Plotting data
-  const optionsBar = {
-    chart: {
-      stacked: true,
-      // toolbar: false,
-    },
-    xaxis: {
-      categories: dates,
-    },
-    dataLabels: {
-      enabled: false,
-    },
-  };
-  const optionsLineAndArea = {
-    chart: {
-      type: "Line",
-      // toolbar: false,
-    },
-    xaxis: {
-      categories: dates,
-    },
-  };
+  //Creating options for chart
+  const optionsLineAndArea = options("line", dates);
+  const optionsBar = options("bar", dates);
   const series = [
     {
       name: "Total Cases",
@@ -62,7 +39,6 @@ const Graph = () => {
       data: activCasesData,
     },
   ];
-
   return (
     <div className="graph-container">
       <p className="card-dates">
@@ -100,7 +76,6 @@ const Graph = () => {
           Area Chart
         </button>
       </div>
-
       {/* // Selecting type of chart */}
       {chartSelector === "bar" ? (
         <Chart options={optionsBar} series={series} type="bar" width="100%" />
@@ -127,5 +102,4 @@ const Graph = () => {
     </div>
   );
 };
-
 export default Graph;

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Table.css";
 import ReactTable from "react-table-6";
-import { CSVLink } from "react-csv";
 
 import { DataContext } from "../../ContextAPI/DataContext";
+import { Export } from "../Export/Export";
 
 const Table = () => {
   //Getting current date
@@ -15,12 +15,11 @@ const Table = () => {
   today = yyyy + "-" + mm + "-" + dd;
 
   //Context values
-  const { tableData, setDateFrom, setDateTo, cityName } =
+  const { tableData, setDateFrom, setDateTo, cityName, setFileName } =
     useContext(DataContext);
 
   // initializing the state variables
 
-  const [filename, setFileName] = useState("default.csv");
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedDateTo, setSelectedDateTo] = useState(null);
 
@@ -83,19 +82,7 @@ const Table = () => {
         style={{ textAlign: "center" }}
         pageSize={8}
       />
-
-      {tableData !== undefined ? (
-        <CSVLink
-          className="btn btn-primary generate"
-          data={tableData}
-          filename={filename}
-          id="export-button"
-        >
-          Export as CSV
-        </CSVLink>
-      ) : (
-        <div>Loading...</div>
-      )}
+      <Export />
     </div>
   );
 };

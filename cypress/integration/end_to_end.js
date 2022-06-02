@@ -32,7 +32,7 @@ describe("generating informations from API test complete application-Automated",
     cy.url().should("include", "localhost:3000/Home");
   });
 
-  it("Should check inputting the dates (From) and (To)", () => {
+  it("Should check inputing the dates (From) and (To)", () => {
     cy.get(".input-from").type("2022-01-01");
     cy.get(".input-from").should("have.value", "2022-01-01");
 

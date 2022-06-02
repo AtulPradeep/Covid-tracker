@@ -32,6 +32,17 @@ I have also made the website responsive for 3 types of devices 
 1)All mobile devices ( 320 - 480)2)IPADs / tablets(481 - 780)3)Desktop or laptop screens. (Large) <780
 I have tested the application on mainly 3 browsers - Chrome, Safari and Firefox .And also tried to run the code on Mac as well as Windows systems.
 
+Cypress test cases (End to End test)
+
+-should visit URL and the titlepassed
+-Should click choose city buttons and check if data is fetchingpassed
+-Gets the choosen text in label and Checks Initial fetchingpassed
+-Should check the routes are validpassed
+-Should check inputing the dates (From) and (To)passed
+-Should click generate button to generate table and chartpassed
+-Should click export button to export documentpassed
+-Should check if Line , bar and area chart functionspassed
+
 Contact
 
 In case of any problems please contact :
