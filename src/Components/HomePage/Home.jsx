@@ -13,7 +13,7 @@ function Home() {
   const [city, setCity] = useState([]);
   const [cityId, setCityId] = useState(13);
   const [dateFrom, setDateFrom] = useState("2022-04-01");
-  const [dateTo, setDateTo] = useState("2022-05-25");
+  const [dateTo, setDateTo] = useState("2022-06-01");
   const [tableData, setTableData] = useState([]);
   const [cityName, setCityName] = useState("");
   const { cityname } = useContext(DataContext);

@@ -15,7 +15,7 @@ function Fetch() {
 
     const res = await Axios.get(
       `https://api.corona-karlsruhe.info/v1/city_infections?cityId=${cityId}&from=${dateFrom}&until=${dateTo}`
-    ).catch((err) => alert("Bad request Error 404"));
+    ).catch((err) => alert("Page not found try again later"));
     res?.data.cityInfections.forEach((item) =>
       data.push({
         date: item.date,
@@ -35,7 +35,7 @@ function Fetch() {
   const getTotal = async () => {
     const response = await Axios.get(
       `https://api.corona-karlsruhe.info/v1/latest_infections`
-    ).catch((err) => alert("Bad request Error 404"));
+    ).catch((err) => alert("Page not found try again later"));
 
     setCity(response.data.latestInfections);
   };

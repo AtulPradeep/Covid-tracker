@@ -11,11 +11,11 @@ function Showbar() {
   const [totalCases, setTotalCases] = useState(0);
   const [activeCases, setActiveCases] = useState(0);
 
-  const handlechange = (e) => {
-    setTotalCases(city[e].totalCases);
-    setActiveCases(city[e].activeCases);
-    setCityName(city[e].cityName);
-    setCityId(city[e].cityId);
+  const handlechange = (index) => {
+    setTotalCases(city[index].totalCases);
+    setActiveCases(city[index].activeCases);
+    setCityName(city[index].cityName);
+    setCityId(city[index].cityId);
   };
 
   useEffect(() => {

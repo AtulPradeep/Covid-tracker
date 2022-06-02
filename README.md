@@ -25,6 +25,13 @@ NOTE :
 Had some issues installing React-table-6 on vs code in Mac OS. If the issue persists please feel free to contact.
 React router dom version used is v5.
 
+I have completed the following features 
+
+1) Shows latest information about total cases, active cases as well as inactive cases.2)Able to generate the cases according to fixed time slots.3)Table to show all the cases in the given time range.Table has features such as sort ascending or decending order 4)3 types of Charts , -Area , -Line ,-Bar charts to show the information.(With hover effects to show exact details)5)Exporting the Table directly into CSV format within a chosen date range.6)Additionally exporting the graph in PNG or SVG formats.7) I have also worked on additional pages such as about covid-19, symptoms, preventions etc to give a better look to the website.
+I have also made the website responsive for 3 types of devices 
+1)All mobile devices ( 320 - 480)2)IPADs / tablets(481 - 780)3)Desktop or laptop screens. (Large) <780
+I have tested the application on mainly 3 browsers - Chrome, Safari and Firefox .And also tried to run the code on Mac as well as Windows systems.
+
 Contact
 
 In case of any problems please contact :

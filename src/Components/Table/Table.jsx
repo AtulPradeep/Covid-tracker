@@ -31,17 +31,17 @@ const Table = () => {
     { Header: "Recovered", accessor: "recovered" },
   ];
 
-  //Generating table and details on button click
+  //Generating table and details on button click also checking all possible error conditions
   const handlechangedate = () => {
-    if (
-      (selectedDateTo && selectedDate) !== null &&
-      selectedDateTo > selectedDate &&
-      (selectedDateTo && selectedDate) <= today
-    ) {
+    if (selectedDateTo < selectedDate) {
+      alert("Incorrect format , please select a valid date");
+    } else if (selectedDate > today) {
+      alert("Selected date is in future!");
+    } else if (selectedDateTo && selectedDate) {
       setDateFrom(selectedDate);
       setDateTo(selectedDateTo);
     } else {
-      alert("Please enter valid date range");
+      alert("Please select a From and to dates");
     }
   };
   // Setting intial value
@@ -57,17 +57,19 @@ const Table = () => {
           {/* date input from and to */}
           <input
             type="date"
+            className="input-from"
             onChange={(e) => setSelectedDate(e.target.value)}
           />
           <input
             type="date"
-            className="inputto"
+            className="input-to"
             onChange={(e) => setSelectedDateTo(e.target.value)}
           />
         </div>
         <button
           type="button"
           className="btn btn-primary btn-sm requestbutton"
+          id="generate-button"
           onClick={handlechangedate}
         >
           Generate
@@ -87,8 +89,9 @@ const Table = () => {
           className="btn btn-primary generate"
           data={tableData}
           filename={filename}
+          id="export-button"
         >
-          Download as CSV
+          Export as CSV
         </CSVLink>
       ) : (
         <div>Loading...</div>

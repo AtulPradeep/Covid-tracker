@@ -4,6 +4,7 @@ import "./Graph.css";
 
 //importing context
 import { DataContext } from "../../ContextAPI/DataContext";
+import { id } from "date-fns/locale";
 
 const Graph = () => {
   //Accessing context value
@@ -23,7 +24,6 @@ const Graph = () => {
     activCasesData.push(item.activeCases);
     totalCasesData.push(item.totalCases);
     recoveredData.push(item.recovered);
-    return null;
   });
 
   //Plotting data
@@ -74,6 +74,7 @@ const Graph = () => {
       <div className="button-container">
         <button
           className="btn graph-btn bar"
+          id="bar"
           onClick={() => {
             setChartSelector("bar");
           }}
@@ -82,6 +83,7 @@ const Graph = () => {
         </button>
         <button
           className="btn graph-btn area"
+          id="line"
           onClick={() => {
             setChartSelector("line");
           }}
@@ -90,6 +92,7 @@ const Graph = () => {
         </button>
         <button
           className="btn graph-btn area"
+          id="area"
           onClick={() => {
             setChartSelector("area");
           }}
